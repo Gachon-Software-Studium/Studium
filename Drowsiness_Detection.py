@@ -55,6 +55,7 @@ def detect() :
 							cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 						#print ("Drowsy")
 						sleep_time+=1
+						print(sleep_time)
 				else:
 					flag = 0
 			# 경고 3번시 break
