@@ -2,7 +2,6 @@
 Professor Choi Jae hyuk 
 
 201735818 Kim Yeoun Su
-201735868 Lim Se Hyuk
 201835493 Lee Seung Kyu
 
 

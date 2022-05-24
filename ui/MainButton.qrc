@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="button">
+    <file>../assets/MainButton.png</file>
+  </qresource>
+</RCC>

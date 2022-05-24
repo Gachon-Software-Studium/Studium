@@ -6,11 +6,9 @@ from PyQt5.QtGui import QMovie
 
 import Timer
 
-
-
-class Sticker(QtWidgets.QMainWindow):
-    def __init__(self, img_path, size=1.0, on_top=False):
-        super(Sticker, self).__init__()
+class Stickering(QtWidgets.QMainWindow):
+    def __init__(self, img_path, size, on_top):
+        super(Stickering, self).__init__()
         image_x = random.randrange(0, 1800)
         image_y = random.randrange(0, 950)
         xy = [image_x, image_y]
@@ -27,7 +25,6 @@ class Sticker(QtWidgets.QMainWindow):
         self.size = size
         self.on_top = on_top
         self.localPos = None
-
         self.setupUi()
         # time.sleep(random.randrange(1,10)*2) occur time random
         self.show()
@@ -41,17 +38,18 @@ class Sticker(QtWidgets.QMainWindow):
 
     # 마우스 눌렀을 때
     def mousePressEvent(self, a0: QtGui.QMouseEvent):
-        self.close()
-        QtWidgets.qApp.quit()
+        print("Mouse Clicked")
         # 동작을 수행하기까지의 걸린시간.
-        Timer.time_check(time.time() - self.start)
-
 
     # 드래그 할 때
     def mouseMoveEvent(self, a0: QtGui.QMouseEvent):
         self.timer.stop()
         self.xy = [(a0.globalX() - self.localPos.x()), (a0.globalY() - self.localPos.y())]
         self.move(*self.xy)
+
+    def mouseDoubleClickEvent(self, e):
+        QtWidgets.qApp.quit()
+        Timer.time_check(time.time() - self.start)
 
     def walk(self, from_xy, to_xy, speed=60):
         self.from_xy = from_xy
@@ -118,9 +116,5 @@ class Sticker(QtWidgets.QMainWindow):
         h = int(movie.frameRect().size().height() * self.size)
         movie.setScaledSize(QtCore.QSize(w, h))
         movie.start()
-
         self.setGeometry(self.xy[0], self.xy[1], w, h)
-
-    def mouseDoubleClickEvent(self, e):
-        QtWidgets.qApp.quit()
 

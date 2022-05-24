@@ -10,6 +10,70 @@
     <height>704</height>
    </rect>
   </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -32,7 +96,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>30</y>
+      <y>50</y>
       <width>51</width>
       <height>41</height>
      </rect>
@@ -52,27 +116,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>100</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>IM혜민 Bold</family>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>편집</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="EditButton3">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>170</y>
+      <y>140</y>
       <width>51</width>
       <height>41</height>
      </rect>
@@ -102,7 +146,7 @@
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>30</y>
+      <y>50</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -112,17 +156,7 @@
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>100</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="NickName">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>170</y>
+      <y>140</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -136,6 +170,35 @@
       <width>221</width>
       <height>181</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>NAME</string>
+    </property>
+    <property name="text">
+     <string>NAME</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>120</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ADDRESS</string>
     </property>
    </widget>
   </widget>

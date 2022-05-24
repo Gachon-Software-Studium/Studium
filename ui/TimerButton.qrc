@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="button">
+    <file>../assets/TimerReset.png</file>
+    <file>../assets/TimerStart.png</file>
+    <file>../assets/TimerStop.png</file>
+    <file>../assets/TimerBack.png</file>
+  </qresource>
+</RCC>

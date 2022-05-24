@@ -1,8 +1,8 @@
-import sys
+
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
-form_class = uic.loadUiType("Quest.ui")[0]
+form_class = uic.loadUiType("ui/Quest.ui")[0]
 # Info ui
 
 class Quest(QDialog, QWidget, form_class):
