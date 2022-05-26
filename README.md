@@ -10,7 +10,7 @@ Professor Choi Jae hyuk
 Studium : 
 An online class support program made with PC executable files.
 
-YouTube Presentation Link : https://youtu.be/picmEMniSKI
+YouTube Presentation Link : 
 
 # Environment
 Using python environment 3.6.x version
@@ -20,7 +20,8 @@ Using python environment 3.6.x version
 1. import cv2
 2. import imutils
 3. import dlib
-4. impor scipy
+4. import scipy
+5. import pyQt5
 
 
 <br> Algorithm
@@ -29,5 +30,9 @@ EAR
 
 Concentration Diagnosis
 
-<
+
+# Usage
+
+Main.ui - Timer.ui(Drowsiness Detection, Concentration Diagnosis)
+
 
