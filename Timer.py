@@ -12,6 +12,7 @@ from threading import Thread
 
 # firebase
 import Drowsiness_Detection
+import Sticker
 
 db_url = 'https://studium-28d4b-default-rtdb.firebaseio.com/'
 cred = credentials.Certificate('studium-28d4b-firebase-adminsdk-94egj-795b3ae3e7.json')
@@ -29,12 +30,12 @@ class Timer(QDialog, QWidget, form_class):
         super(Timer, self).__init__()
 
         self.initUI()
-        self.detect_return = 0
+
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.run_watch)
         self.timer.setInterval(1)
         self.mscounter = 0
-        self.isreset = True
+        self.isreset = False
         self.showLCD()
         self.show()
 
@@ -58,19 +59,17 @@ class Timer(QDialog, QWidget, form_class):
         self.showLCD()
 
     def start(self):
-        self.p1 = Process(target=self.detect_start(),)
-        self.p2 = Process(target=self.timer_start(),)
-        self.p1.start()
-        self.p2.start()
+        detect_return=0
+        p0 = Process(target=self.timer.start(),)
+        p0.start()
+        p0.join()
 
-        self.p1.join()
-        self.p2.join()
 
     def reset(self):
         self.timer.stop()
         ref.update({'time': self.mscounter / 1000})
         self.mscounter = 0
-        self.isreset = True
+        self.isreset = False
         self.showLCD()
 
     def stop(self):
@@ -79,15 +78,15 @@ class Timer(QDialog, QWidget, form_class):
     def back(self):
         self.close()
 
-    def detect_start(self):
-        while 1:
-            if self.detect_return == 0:
-                self.detect_return = Drowsiness_Detection.detect()
-            else:
-                break
+    #def detect_start(self):
+    #    while 1:
+    #        if self.detect_return == 0:
+    #            self.detect_return = Drowsiness_Detection.detect()
+    #        else:
+    #            break
 
-    def timer_start(self):
-        self.timer.start()
+    #def timer_start(self):
+    #    self.timer.start()
 
 def beepsound():
     fr = 2000
@@ -100,5 +99,5 @@ def time_check(i):
     print("playtime : %2f" % playtime)
     if playtime > 10:
         beepsound()
-        Timer().start()
+        print("Time Limit over")
         # 졸음 stack +1

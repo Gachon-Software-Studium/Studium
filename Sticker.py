@@ -39,17 +39,13 @@ class Stickering(QtWidgets.QMainWindow):
     # 마우스 눌렀을 때
     def mousePressEvent(self, a0: QtGui.QMouseEvent):
         print("Mouse Clicked")
-        # 동작을 수행하기까지의 걸린시간.
+
 
     # 드래그 할 때
     def mouseMoveEvent(self, a0: QtGui.QMouseEvent):
         self.timer.stop()
         self.xy = [(a0.globalX() - self.localPos.x()), (a0.globalY() - self.localPos.y())]
         self.move(*self.xy)
-
-    def mouseDoubleClickEvent(self, e):
-        QtWidgets.qApp.quit()
-        Timer.time_check(time.time() - self.start)
 
     def walk(self, from_xy, to_xy, speed=60):
         self.from_xy = from_xy
@@ -118,3 +114,7 @@ class Stickering(QtWidgets.QMainWindow):
         movie.start()
         self.setGeometry(self.xy[0], self.xy[1], w, h)
 
+    def mouseDoubleClickEvent(self, e):
+        self.close()
+        QtWidgets.qApp.quit()
+        Timer.time_check(time.time() - self.start)# 동작을 수행하기까지의 걸린시간

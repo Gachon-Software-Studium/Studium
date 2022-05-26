@@ -61,24 +61,22 @@ def detect():
                         print(sleep_time)
                 else:
                     flag = 0
-            # 경고 3번시 break
-            if sleep_time == 3:
-                Sticker.Stickering('gif/move.gif', 0.1, True)
+            # 경고 10번시 break
+            if sleep_time == 10:
                 sleep_time = 0
-
-                re = 1
-
+                re = 11
+                break
 
             cv2.imshow("Frame", frame)
             key = cv2.waitKey(1) & 0xFF
 
             if key == ord("q"):  # q 를 누르면 종료
-
+                re = 1
                 break
     except KeyboardInterrupt:
         print("test")
 
     cv2.destroyAllWindows()
     cap.release()
-    print("detect end")
+    print("Drowsiness detect end")
     return re
