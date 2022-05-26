@@ -32,7 +32,7 @@ Concentration Diagnosis
 
 
 # Usage
-
+Start Button to execute UI, and Push Buttons to use program's functions.
 Main.ui - Timer.ui(Drowsiness Detection, Concentration Diagnosis)
 
 
